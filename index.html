@@ -17,7 +17,7 @@
         <section id="auth" class="flex direction-column">
             <div class="panel login flex direction-column">
                 <h1 title="Instagram" class="flex justify-content-center">
-                    <img src="./img//instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
+                    <img src="instagram-logo.png" alt="Instagram logo" title="Instagram logo" />
                 </h1>
                 <form>
                     <label for="email" class="sr-only">Phone number, username,or e-mail </label>
@@ -73,5 +73,58 @@
         <p>311121104303</p>
         <p>3rd year / (CSE)</p>
     </footer>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <!-- Your existing meta tags, stylesheets, and title -->
+    </head>
+    <body>
+        <!-- Your existing HTML content -->
+    
+        <script>
+            // Function to validate email address format
+            function validateEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+    
+            // Function to validate password format (e.g., must be at least 8 characters)
+            function validatePassword(password) {
+                return password.length >= 8;
+            }
+    
+            // Function to handle form submission
+            function handleSubmit() {
+                const emailInput = document.querySelector('input[name="email"]');
+                const passwordInput = document.querySelector('input[name="password"]');
+                
+                const email = emailInput.value;
+                const password = passwordInput.value;
+                
+                // Validate email
+                if (!validateEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Validate password
+                if (!validatePassword(password)) {
+                    alert('Password must be at least 8 characters long.');
+                    return;
+                }
+                
+                // If both inputs are valid, you can proceed with form submission or other actions.
+                // For now, let's just log the values to the console.
+                console.log('Valid email:', email);
+                console.log('Valid password:', password);
+            }
+    
+            // Attach the handleSubmit function to the button click event
+            const loginButton = document.querySelector('button');
+            loginButton.addEventListener('click', handleSubmit);
+        </script>
+    </body>
+    </html>
+    
 </body>
 </html>
